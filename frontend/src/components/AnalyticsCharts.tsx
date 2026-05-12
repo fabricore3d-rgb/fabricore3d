@@ -59,11 +59,12 @@ export function AnalyticsCharts({ financialData, printerData }: AnalyticsChartsP
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
-                tickFormatter={(value) => `R$${value}`}
+                tickFormatter={(value) => `R$ ${value.toLocaleString('pt-BR')}`}
               />
               <Tooltip 
                 contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px' }}
                 itemStyle={{ fontSize: '12px' }}
+                formatter={(value: number) => [`R$ ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '']}
               />
               <Area 
                 type="monotone" 

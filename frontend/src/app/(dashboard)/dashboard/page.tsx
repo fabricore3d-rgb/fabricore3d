@@ -54,7 +54,7 @@ export default async function DashboardPage() {
             <DollarSign className="w-4 h-4 text-emerald-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-zinc-100">R$ {expectedRevenue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+            <div className="text-2xl font-bold text-zinc-100">R$ {expectedRevenue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
             <p className="text-xs text-zinc-500 mt-1">Bruto total esperado</p>
           </CardContent>
         </Card>
@@ -65,7 +65,7 @@ export default async function DashboardPage() {
             <TrendingUp className="w-4 h-4 text-emerald-400" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-emerald-400">R$ {expectedProfit.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+            <div className="text-2xl font-bold text-emerald-400">R$ {expectedProfit.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
             <p className="text-xs text-zinc-500 mt-1">Margem aplicada</p>
           </CardContent>
         </Card>
