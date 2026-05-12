@@ -18,8 +18,8 @@ export async function login(formData: FormData) {
     redirect("/login?error=Credenciais inválidas");
   }
 
-  revalidatePath("/", "layout");
-  redirect("/");
+  revalidatePath("/dashboard", "layout");
+  redirect("/dashboard");
 }
 
 export async function signup(formData: FormData) {
@@ -36,13 +36,13 @@ export async function signup(formData: FormData) {
     redirect("/login?error=Erro ao criar conta");
   }
 
-  revalidatePath("/", "layout");
-  redirect("/");
+  revalidatePath("/dashboard", "layout");
+  redirect("/dashboard");
 }
 
 export async function logout() {
   const supabase = await createClient();
   await supabase.auth.signOut();
   revalidatePath("/", "layout");
-  redirect("/login");
+  redirect("/");
 }

@@ -32,7 +32,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   const isAuthPage = request.nextUrl.pathname.startsWith('/login')
-  const isPublicPage = request.nextUrl.pathname.startsWith('/lp')
+  const isPublicPage = request.nextUrl.pathname === '/' || request.nextUrl.pathname.startsWith('/lp')
 
   if (!user && !isAuthPage && !isPublicPage) {
     const url = request.nextUrl.clone()
@@ -42,7 +42,7 @@ export async function updateSession(request: NextRequest) {
 
   if (user && isAuthPage) {
     const url = request.nextUrl.clone()
-    url.pathname = '/'
+    url.pathname = '/dashboard'
     return NextResponse.redirect(url)
   }
 

@@ -10,7 +10,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Dashboard", href: "/", icon: BarChart3 },
+    { name: "Dashboard", href: "/dashboard", icon: BarChart3 },
     { name: "Pedidos & CRM", href: "/pedidos", icon: Package },
     { name: "Fazenda & Estoque", href: "/fazenda", icon: Printer },
   ];
